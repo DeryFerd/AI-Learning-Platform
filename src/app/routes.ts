@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
+import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import LearningPaths from "./pages/LearningPaths";
 import CourseLesson from "./pages/CourseLesson";
@@ -11,9 +12,13 @@ import ModelPlayground from "./pages/ModelPlayground";
 export const router = createBrowserRouter([
   {
     path: "/",
+    Component: LandingPage,
+  },
+  {
+    path: "/",
     Component: Layout,
     children: [
-      { index: true, Component: Dashboard },
+      { path: "dashboard", Component: Dashboard },
       { path: "learning-paths", Component: LearningPaths },
       { path: "course/:courseId/lesson/:lessonId", Component: CourseLesson },
       { path: "lab/:labId", Component: AILab },

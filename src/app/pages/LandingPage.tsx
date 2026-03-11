@@ -3,228 +3,258 @@ import {
   ArrowRight,
   BookOpen,
   BrainCircuit,
-  CheckCircle2,
   ChevronRight,
+  Code2,
+  Compass,
   Database,
   FlaskConical,
   GraduationCap,
-  LineChart,
+  Hexagon,
+  Layers,
   MessageSquare,
   Play,
+  Rocket,
   Sparkles,
-  Target,
+  Terminal,
+  Zap,
 } from "lucide-react";
 
-const featureCards = [
+const features = [
   {
     icon: BookOpen,
-    title: "Structured learning paths",
-    description:
-      "Roadmaps that take learners from fundamentals to deployment with clear milestones and real deliverables.",
+    title: "Learning Paths",
+    description: "Structured roadmaps from fundamentals to deployment with real deliverables.",
     href: "/learning-paths",
-    accent: "from-sky-500/20 to-cyan-400/10",
+    color: "text-amber-400",
+    bg: "bg-amber-400/10",
+    border: "border-amber-400/20",
   },
   {
     icon: FlaskConical,
-    title: "Hands-on AI labs",
-    description:
-      "Interactive lab environments for model experiments, guided practice, and portfolio-ready project work.",
+    title: "AI Labs",
+    description: "Interactive environments for model experiments and portfolio-ready projects.",
     href: "/lab/ml-fundamentals",
-    accent: "from-amber-500/20 to-orange-400/10",
+    color: "text-lime-400",
+    bg: "bg-lime-400/10",
+    border: "border-lime-400/20",
   },
   {
     icon: MessageSquare,
-    title: "Always-on AI tutor",
-    description:
-      "On-demand feedback, explanations, and debugging support to keep learning momentum high.",
+    title: "AI Tutor",
+    description: "On-demand feedback, explanations, and debugging support anytime.",
     href: "/tutor",
-    accent: "from-emerald-500/20 to-teal-400/10",
+    color: "text-rose-400",
+    bg: "bg-rose-400/10",
+    border: "border-rose-400/20",
   },
   {
     icon: Database,
-    title: "Dataset and model workspace",
-    description:
-      "Curate datasets, test prompt and model behavior, and iterate from research to usable product workflows.",
+    title: "Dataset Hub",
+    description: "Curate datasets, test prompts, and iterate from research to product.",
     href: "/datasets",
-    accent: "from-fuchsia-500/20 to-pink-400/10",
+    color: "text-violet-400",
+    bg: "bg-violet-400/10",
+    border: "border-violet-400/20",
   },
 ];
 
-const stats = [
-  { value: "40+", label: "guided modules mapped to skills teams actually hire for" },
-  { value: "12", label: "live workflow surfaces across learning, labs, tutor, data, and playground" },
-  { value: "3x", label: "faster learner iteration when practice, support, and experiments stay in one flow" },
-];
-
-const pillars = [
+const modules = [
   {
-    title: "Learn with context",
-    text: "Lessons, tutor guidance, and labs line up so concepts turn into action immediately instead of getting stuck in theory.",
+    number: "01",
+    title: "Foundation",
+    description: "Core concepts, math basics, and Python fundamentals for AI.",
+    tags: ["2 weeks", "Beginner"],
   },
   {
-    title: "Build like a practitioner",
-    text: "Move from foundation work into datasets, playground experiments, and production-shaped projects without changing tools.",
+    number: "02",
+    title: "ML & Deep Learning",
+    description: "Neural networks, transformers, and model architectures.",
+    tags: ["4 weeks", "Intermediate"],
   },
   {
-    title: "Track meaningful progress",
-    text: "Dashboards and milestones make growth visible for learners, mentors, and teams building capability programs.",
+    number: "03",
+    title: "LLM Engineering",
+    description: "Prompt engineering, fine-tuning, and production deployment.",
+    tags: ["4 weeks", "Advanced"],
   },
-];
-
-const workflow = [
-  "Choose a learning path that matches your current level and target role.",
-  "Practice inside labs and the playground with guided experiments.",
-  "Use the AI tutor to unblock questions, review logic, and refine output.",
-  "Track progress in the dashboard and keep momentum through visible milestones.",
+  {
+    number: "04",
+    title: "Applied Projects",
+    description: "Build real products: RAG systems, agents, and AI integrations.",
+    tags: ["4 weeks", "Advanced"],
+  },
 ];
 
 export default function LandingPage() {
   return (
-    <div className="dark min-h-screen overflow-x-hidden bg-background text-foreground">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.24),_transparent_48%),radial-gradient(circle_at_18%_22%,_rgba(14,165,233,0.18),_transparent_25%),linear-gradient(180deg,_rgba(8,8,14,1)_0%,_rgba(10,10,15,1)_54%,_rgba(10,10,15,0.98)_100%)]" />
-      <div className="absolute right-[-10rem] top-32 -z-10 h-80 w-80 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="absolute left-[-8rem] top-[28rem] -z-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
+    <div className="dark min-h-screen bg-[#0c0c0f] text-zinc-100 overflow-x-hidden">
+      {/* Geometric Pattern Background */}
+      <div className="fixed inset-0 -z-10 opacity-[0.03]">
+        <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
 
-      <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 via-blue-500 to-cyan-400 shadow-[0_18px_45px_rgba(56,189,248,0.25)]">
-            <GraduationCap className="size-6 text-white" />
+      {/* Noise texture overlay */}
+      <div className="fixed inset-0 -z-10 opacity-[0.015] pointer-events-none">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bT1vY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iMC41Ii8+PC9zdmc+')]"></div>
+      </div>
+
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0c0c0f]/80 backdrop-blur-xl">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+          <Link to="/" className="flex items-center gap-3">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-zinc-100 text-zinc-900">
+              <Terminal className="size-5" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold tracking-wide text-zinc-100">ACADEMY</p>
+            </div>
+          </Link>
+
+          <nav className="hidden items-center gap-8 text-sm text-zinc-500 md:flex">
+            <Link to="/learning-paths" className="transition-colors hover:text-zinc-100">
+              Paths
+            </Link>
+            <Link to="/lab/ml-fundamentals" className="transition-colors hover:text-zinc-100">
+              Labs
+            </Link>
+            <Link to="/tutor" className="transition-colors hover:text-zinc-100">
+              Tutor
+            </Link>
+            <Link to="/datasets" className="transition-colors hover:text-zinc-100">
+              Datasets
+            </Link>
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <Link
+              to="/dashboard"
+              className="hidden rounded-lg px-4 py-2 text-sm text-zinc-400 transition-colors hover:text-zinc-100 sm:inline-flex"
+            >
+              Sign in
+            </Link>
+            <Link
+              to="/learning-paths"
+              className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-900 transition-transform hover:-translate-y-0.5"
+            >
+              Get started
+              <ArrowRight className="size-4" />
+            </Link>
           </div>
-          <div>
-            <p className="text-sm uppercase tracking-[0.28em] text-cyan-200/70">AI Academy</p>
-            <p className="text-sm text-muted-foreground">Production-level AI learning platform</p>
-          </div>
-        </Link>
-
-        <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-          <Link to="/learning-paths" className="transition-colors hover:text-foreground">
-            Paths
-          </Link>
-          <Link to="/lab/ml-fundamentals" className="transition-colors hover:text-foreground">
-            Labs
-          </Link>
-          <Link to="/tutor" className="transition-colors hover:text-foreground">
-            Tutor
-          </Link>
-          <Link to="/datasets" className="transition-colors hover:text-foreground">
-            Datasets
-          </Link>
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <Link
-            to="/dashboard"
-            className="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-foreground transition-colors hover:bg-white/10 sm:inline-flex"
-          >
-            Open dashboard
-          </Link>
-          <Link
-            to="/learning-paths"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-slate-950 transition-transform hover:-translate-y-0.5"
-          >
-            Start learning
-            <ArrowRight className="size-4" />
-          </Link>
         </div>
       </header>
 
-      <main>
-        <section className="mx-auto grid w-full max-w-7xl gap-14 px-6 pb-20 pt-8 lg:grid-cols-[1.2fr_0.8fr] lg:px-10 lg:pb-28 lg:pt-14">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">
-              <Sparkles className="size-4" />
-              One platform for learning, experimenting, and shipping AI skills
-            </div>
+      <main className="pt-20">
+        {/* Hero Section */}
+        <section className="relative mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-8">
+            <div className="max-w-2xl">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-2 text-sm text-zinc-400">
+                <Sparkles className="size-4 text-amber-400" />
+                <span>Production-ready AI education</span>
+              </div>
 
-            <h1 className="max-w-4xl text-5xl leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
-              Build AI capability that feels practical from day one.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              This landing page introduces a full learning environment where courses,
-              experiments, tutoring, and progress tracking work together instead of living
-              in separate tools.
-            </p>
+              <h1 className="text-5xl font-bold leading-[1.1] tracking-tight text-zinc-50 md:text-6xl lg:text-7xl">
+                Build AI skills that
+                <span className="block text-amber-400">actually matter.</span>
+              </h1>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                to="/learning-paths"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-4 text-base font-medium text-slate-950 shadow-[0_16px_40px_rgba(34,211,238,0.35)] transition-transform hover:-translate-y-0.5"
-              >
-                Explore learning paths
-                <ChevronRight className="size-5" />
-              </Link>
-              <Link
-                to="/playground"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-base text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-              >
-                <Play className="size-4" />
-                Open model playground
-              </Link>
-            </div>
+              <p className="mt-6 max-w-lg text-lg leading-8 text-zinc-400">
+                Stop collecting tutorials. Start building real AI products. Learn by doing with hands-on labs, 
+                real datasets, and an AI tutor that actually helps.
+              </p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  to="/learning-paths"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-7 py-4 text-base font-semibold text-zinc-900 transition-transform hover:-translate-y-1 hover:bg-amber-300"
                 >
-                  <p className="text-3xl text-white">{stat.value}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">{stat.label}</p>
+                  Start learning
+                  <ChevronRight className="size-5" />
+                </Link>
+                <Link
+                  to="/playground"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/50 px-7 py-4 text-base font-medium text-zinc-100 backdrop-blur-sm transition-colors hover:bg-zinc-800"
+                >
+                  <Play className="size-4" />
+                  Try playground
+                </Link>
+              </div>
+
+              <div className="mt-12 flex items-center gap-8 text-sm">
+                <div className="flex items-center gap-2 text-zinc-500">
+                  <div className="flex -space-x-2">
+                    <div className="size-8 rounded-full bg-zinc-700 border-2 border-[#0c0c0f]"></div>
+                    <div className="size-8 rounded-full bg-zinc-600 border-2 border-[#0c0c0f]"></div>
+                    <div className="size-8 rounded-full bg-zinc-500 border-2 border-[#0c0c0f]"></div>
+                  </div>
+                  <span>2,000+ learners</span>
                 </div>
-              ))}
+                <div className="h-4 w-px bg-zinc-800"></div>
+                <div className="flex items-center gap-2 text-zinc-500">
+                  <Zap className="size-4 text-amber-400" />
+                  <span>40+ real projects</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="relative">
-            <div className="rounded-[2rem] border border-white/10 bg-white/6 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#0d1320] p-6">
-                <div className="mb-6 flex items-center justify-between">
+            {/* Hero Visual - Terminal-style Code Editor */}
+            <div className="relative">
+              <div className="absolute -left-4 -top-4 h-24 w-24 opacity-20">
+                <svg viewBox="0 0 100 100" fill="none" className="h-full w-full text-amber-400">
+                  <path d="M20 80L80 20M80 20H30M80 20V70" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              
+              <div className="rounded-2xl border border-zinc-800 bg-zinc-950 overflow-hidden shadow-2xl">
+                {/* Terminal header */}
+                <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900/50 px-4 py-3">
+                  <div className="size-3 rounded-full bg-red-500/80"></div>
+                  <div className="size-3 rounded-full bg-amber-500/80"></div>
+                  <div className="size-3 rounded-full bg-lime-500/80"></div>
+                  <div className="ml-4 flex items-center gap-2 rounded-md bg-zinc-900 px-3 py-1.5 text-xs text-zinc-500">
+                    <Terminal className="size-3" />
+                    <span>main.py</span>
+                  </div>
+                </div>
+                
+                {/* Code content */}
+                <div className="p-6 font-mono text-sm leading-relaxed">
+                  <div className="text-zinc-500"># Fine-tuning a model for your use case</div>
+                  <div><span className="text-violet-400">from</span> transformers <span className="text-violet-400">import</span> AutoModelForCausalLM, AutoTokenizer</div>
+                  <br />
+                  <div><span className="text-rose-400">model</span> = AutoModelForCausalLM.<span className="text-blue-400">from_pretrained</span>(</div>
+                  <div className="pl-4"><span className="text-green-400">"meta-llama/Llama-2-7b"</span>,</div>
+                  <div className="pl-4">load_in_8bit=<span className="text-amber-400">True</span>,</div>
+                  <div className="pl-4">device_map=<span className="text-violet-400">"auto"</span></div>
+                  <div>)</div>
+                  <br />
+                  <div><span className="text-rose-400">trainer</span> = <span className="text-blue-400">Trainer</span>(</div>
+                  <div className="pl-4">model=model,</div>
+                  <div className="pl-4">train_dataset=dataset,</div>
+                  <div className="pl-4">args=training_args</div>
+                  <div>)</div>
+                  <br />
+                  <div className="text-green-400"># Training started...</div>
+                  <div className="text-zinc-600">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 67%</div>
+                </div>
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute -bottom-6 -right-4 rounded-xl border border-zinc-800 bg-zinc-900 p-4 shadow-xl">
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-lime-400/20 text-lime-400">
+                    <Rocket className="size-5" />
+                  </div>
                   <div>
-                    <p className="text-sm uppercase tracking-[0.24em] text-cyan-200/70">
-                      Live capability map
-                    </p>
-                    <h2 className="mt-2 text-2xl text-white">From learner to builder</h2>
-                  </div>
-                  <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
-                    Cohort ready
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  {pillars.map((pillar, index) => (
-                    <div
-                      key={pillar.title}
-                      className="rounded-2xl border border-white/8 bg-white/[0.04] p-4"
-                    >
-                      <div className="mb-3 flex items-center gap-3">
-                        <div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 text-sm text-white">
-                          0{index + 1}
-                        </div>
-                        <h3 className="text-lg text-white">{pillar.title}</h3>
-                      </div>
-                      <p className="text-sm leading-6 text-slate-400">{pillar.text}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-cyan-400/15 bg-cyan-400/8 p-4">
-                  <div className="mb-3 flex items-center gap-2 text-cyan-200">
-                    <LineChart className="size-4" />
-                    Momentum snapshot
-                  </div>
-                  <div className="grid grid-cols-3 gap-3 text-sm">
-                    <div className="rounded-xl bg-slate-950/30 p-3">
-                      <p className="text-slate-400">Weekly focus</p>
-                      <p className="mt-1 text-lg text-white">LLM Engineering</p>
-                    </div>
-                    <div className="rounded-xl bg-slate-950/30 p-3">
-                      <p className="text-slate-400">Lab completion</p>
-                      <p className="mt-1 text-lg text-white">67%</p>
-                    </div>
-                    <div className="rounded-xl bg-slate-950/30 p-3">
-                      <p className="text-slate-400">Tutor usage</p>
-                      <p className="mt-1 text-lg text-white">Daily</p>
-                    </div>
+                    <p className="text-sm font-medium text-zinc-100">Deployment ready</p>
+                    <p className="text-xs text-zinc-500">Model optimized for production</p>
                   </div>
                 </div>
               </div>
@@ -232,40 +262,40 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-7xl px-6 py-8 lg:px-10">
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-sm uppercase tracking-[0.24em] text-cyan-200/70">
-                Platform surfaces
-              </p>
-              <h2 className="mt-3 text-4xl text-white">Everything points back to applied progress.</h2>
-            </div>
-            <p className="max-w-xl text-sm leading-7 text-slate-400">
-              The landing page now frames the existing product pages as one coherent system,
-              so users understand where to start and why each area matters.
+        {/* Feature Cards - Asymmetric Grid */}
+        <section className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
+          <div className="mb-12">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+              What you get
             </p>
+            <h2 className="text-3xl font-bold text-zinc-50 md:text-4xl">
+              Everything you need to go from learner to builder.
+            </h2>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
-            {featureCards.map((feature) => {
+          <div className="grid gap-4 lg:grid-cols-4">
+            {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <Link
                   key={feature.title}
                   to={feature.href}
-                  className={`group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br ${feature.accent} p-[1px] transition-transform hover:-translate-y-1`}
+                  className={`group relative overflow-hidden rounded-2xl border ${feature.border} bg-zinc-900/50 p-6 transition-all hover:-translate-y-1 hover:bg-zinc-900 ${
+                    index === 0 ? "lg:col-span-2 lg:row-span-2" : ""
+                  }`}
                 >
-                  <div className="h-full rounded-[1.7rem] bg-[#0d111a] p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="rounded-2xl bg-white/6 p-3 text-cyan-200">
-                        <Icon className="size-6" />
-                      </div>
-                      <ChevronRight className="size-5 text-slate-500 transition-transform group-hover:translate-x-1" />
-                    </div>
-                    <h3 className="mt-8 text-2xl text-white">{feature.title}</h3>
-                    <p className="mt-3 max-w-lg text-sm leading-7 text-slate-400">
-                      {feature.description}
-                    </p>
+                  <div className={`mb-4 inline-flex rounded-lg ${feature.bg} p-3 ${feature.color}`}>
+                    <Icon className="size-6" />
+                  </div>
+                  <h3 className={`font-semibold text-zinc-100 ${index === 0 ? "text-2xl" : "text-lg"}`}>
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                    {feature.description}
+                  </p>
+                  <div className="mt-4 flex items-center gap-1 text-xs font-medium text-zinc-500 group-hover:text-zinc-300">
+                    <span>Explore</span>
+                    <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
               );
@@ -273,85 +303,130 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
-          <div className="rounded-[2rem] border border-white/10 bg-[#0c1018] p-8">
-            <p className="text-sm uppercase tracking-[0.24em] text-cyan-200/70">Workflow</p>
-            <h2 className="mt-3 text-4xl text-white">A smoother path from curiosity to execution.</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-400">
-              The homepage now explains the operational loop clearly, which helps this product
-              feel like a platform instead of a loose set of pages.
-            </p>
-          </div>
+        {/* Learning Modules - Horizontal Timeline Style */}
+        <section className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-8">
+            <div>
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                Curriculum
+              </p>
+              <h2 className="text-3xl font-bold text-zinc-50 md:text-4xl">
+                Four phases.<br />
+                <span className="text-amber-400">One complete journey.</span>
+              </h2>
+              <p className="mt-6 text-zinc-400 leading-relaxed">
+                Each phase builds on the previous. By the end, you'll have built 
+                real AI products, not just completed tutorials.
+              </p>
+            </div>
 
-          <div className="grid gap-4">
-            {workflow.map((step, index) => (
-              <div
-                key={step}
-                className="flex gap-4 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5"
-              >
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-400 text-sm text-white">
-                  0{index + 1}
+            <div className="space-y-4">
+              {modules.map((module, index) => (
+                <div
+                  key={module.number}
+                  className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 p-5 transition-colors hover:border-zinc-700"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex shrink-0 items-center justify-center rounded-lg bg-zinc-800 text-zinc-400 group-hover:bg-amber-400/20 group-hover:text-amber-400">
+                      <span className="font-mono text-sm font-bold">{module.number}</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-semibold text-zinc-100">{module.title}</h3>
+                        <div className="flex gap-2">
+                          {module.tags.map((tag) => (
+                            <span key={tag} className="rounded-full bg-zinc-800 px-2 py-0.5 text-xs text-zinc-500">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <p className="mt-2 text-sm text-zinc-400">{module.description}</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm uppercase tracking-[0.2em] text-slate-500">
-                    Step {index + 1}
-                  </p>
-                  <p className="mt-2 text-base leading-7 text-slate-200">{step}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-7xl px-6 pb-24 lg:px-10">
-          <div className="overflow-hidden rounded-[2.5rem] border border-cyan-400/15 bg-[linear-gradient(135deg,_rgba(20,28,46,0.98),_rgba(8,12,20,0.98))] p-8 sm:p-10 lg:p-12">
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              <div>
-                <p className="text-sm uppercase tracking-[0.28em] text-cyan-200/70">
-                  Ready to explore
-                </p>
-                <h2 className="mt-4 text-4xl text-white lg:text-5xl">
-                  Start with the path, then let the platform pull users deeper.
-                </h2>
-                <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
-                  Use this homepage as the front door for your AI education product, with clear
-                  routes into the dashboard, lessons, labs, tutor, and experimentation tools.
-                </p>
+        {/* Stats / Social Proof */}
+        <section className="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-950/50 p-8 md:p-12">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="text-center md:text-left">
+                <p className="text-4xl font-bold text-zinc-50 md:text-5xl">40+</p>
+                <p className="mt-2 text-zinc-400">guided modules mapped to skills teams actually hire for</p>
               </div>
-
-              <div className="grid gap-4">
-                <Link
-                  to="/dashboard"
-                  className="flex items-center justify-between rounded-[1.5rem] border border-white/10 bg-white/6 px-5 py-4 text-white transition-colors hover:bg-white/10"
-                >
-                  <div className="flex items-center gap-3">
-                    <Target className="size-5 text-cyan-300" />
-                    <span>View learner dashboard</span>
-                  </div>
-                  <ArrowRight className="size-5" />
-                </Link>
-                <Link
-                  to="/tutor"
-                  className="flex items-center justify-between rounded-[1.5rem] border border-white/10 bg-white/6 px-5 py-4 text-white transition-colors hover:bg-white/10"
-                >
-                  <div className="flex items-center gap-3">
-                    <BrainCircuit className="size-5 text-cyan-300" />
-                    <span>Open AI tutor</span>
-                  </div>
-                  <ArrowRight className="size-5" />
-                </Link>
-                <div className="rounded-[1.5rem] border border-emerald-400/15 bg-emerald-400/8 px-5 py-4 text-sm leading-7 text-emerald-100">
-                  <div className="mb-2 flex items-center gap-2">
-                    <CheckCircle2 className="size-4" />
-                    Landing page foundation is now in place
-                  </div>
-                  The new homepage connects the existing routes into a stronger first impression
-                  and fixes the missing root page file at the same time.
-                </div>
+              <div className="text-center md:text-left">
+                <p className="text-4xl font-bold text-zinc-50 md:text-5xl">12</p>
+                <p className="mt-2 text-zinc-400">live workflow surfaces across learning, labs, tutor, data</p>
+              </div>
+              <div className="text-center md:text-left">
+                <p className="text-4xl font-bold text-amber-400 md:text-5xl">3x</p>
+                <p className="mt-2 text-zinc-400">faster learner iteration when everything stays in one flow</p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* CTA Section - Bold Typography */}
+        <section className="mx-auto w-full max-w-7xl px-6 pb-24 lg:px-10">
+          <div className="relative overflow-hidden rounded-3xl bg-zinc-900 p-8 md:p-16">
+            {/* Decorative elements */}
+            <div className="absolute -right-20 -top-20 h-64 w-64 opacity-10">
+              <Hexagon className="h-full w-full text-amber-400" />
+            </div>
+            <div className="absolute -bottom-10 -left-10 h-40 w-40 opacity-10">
+              <Layers className="h-full w-full text-lime-400" />
+            </div>
+
+            <div className="relative z-10">
+              <h2 className="text-4xl font-bold text-zinc-50 md:text-6xl">
+                Ready to build<br />
+                <span className="text-amber-400">something real?</span>
+              </h2>
+              <p className="mt-6 max-w-xl text-lg text-zinc-400">
+                No more tutorial hell. Join learners who are actually building AI products 
+                and landing jobs in AI engineering.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  to="/learning-paths"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-8 py-4 text-base font-semibold text-zinc-900 transition-transform hover:-translate-y-1 hover:bg-amber-300"
+                >
+                  Start your path
+                  <ArrowRight className="size-5" />
+                </Link>
+                <Link
+                  to="/dashboard"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-transparent px-8 py-4 text-base font-medium text-zinc-100 transition-colors hover:bg-zinc-800"
+                >
+                  <Compass className="size-5" />
+                  Explore platform
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-zinc-800 bg-zinc-950 py-12">
+          <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+              <div className="flex items-center gap-3">
+                <div className="flex size-8 items-center justify-center rounded-lg bg-zinc-100 text-zinc-900">
+                  <Terminal className="size-4" />
+                </div>
+                <span className="text-sm font-semibold text-zinc-100">ACADEMY</span>
+              </div>
+              <p className="text-sm text-zinc-500">
+                © 2024 AI Academy. Built for builders.
+              </p>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
